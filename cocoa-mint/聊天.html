@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>聊天</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0}
+.ruffle{height:9px;background-image:radial-gradient(circle at 7px 0,#E3B2A8 7px,transparent 7.6px);background-size:14px 9px;background-repeat:repeat-x}
+.lace{height:13px;margin-top:-5px;background-image:radial-gradient(circle at 9px 2px,#9DB4B4 1.5px,transparent 2px),radial-gradient(circle at 9px 0,#FBF5F1 7px,#785B54 7.4px,#785B54 8.6px,transparent 9.1px);background-size:18px 13px;background-repeat:repeat-x}
+button{font-family:inherit;cursor:pointer}
+</style>
+
+</head>
+<body>
+<div style="width: 390px; height: 844px; box-sizing: border-box; display: flex; flex-direction: column; overflow: hidden; font-family: 'Noto Serif SC', serif; color: #4A3530; background-color: #FBF5F1; background-image: radial-gradient(#E3B2A8 1.6px, transparent 2.1px), radial-gradient(#9DB4B4 1.6px, transparent 2.1px), repeating-linear-gradient(90deg, rgba(157,180,180,0.14) 0 9px, transparent 9px 24px); background-size: 24px 24px, 24px 24px, auto; background-position: 0 0, 12px 12px, 0 0">
+
+  <header style="flex: none">
+    <div style="height: 50px; background: #785B54; display: flex; align-items: center; padding: 0 6px; position: relative">
+      <button aria-label="菜单" style="width: 44px; height: 44px; border: 0; background: transparent; display: flex; align-items: center; justify-content: center; padding: 0">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FBF5F1" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+      </button>
+      <div style="position: absolute; left: 0; right: 0; bottom: 4px; border-bottom: 1.5px dashed rgba(251,245,241,0.5)"></div>
+    </div>
+    <div class="ruffle"></div>
+    <div class="lace"></div>
+  </header>
+
+  <main style="flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 16px; padding: 14px 14px 10px">
+
+    <div style="display: flex; flex-direction: column; gap: 6px">
+      <div style="display: flex; align-items: flex-start; gap: 10px">
+        <div style="flex: none; width: 40px; height: 40px; border-radius: 50%; border: 1.5px solid #785B54; overflow: hidden; box-sizing: border-box">
+          <img src="ai.png" alt="AI头像" style="width: 100%; height: 100%; object-fit: cover; display: block">
+        </div>
+        <div style="position: relative; max-width: 250px">
+          <svg width="12" height="16" viewBox="0 0 12 16" style="position: absolute; left: -10px; top: 12px" aria-hidden="true"><path d="M12 1L1 8l11 7z" fill="#E6EEEC"></path><path d="M12 1L1 8l11 7" fill="none" stroke="#785B54" stroke-width="2" stroke-linejoin="round"></path></svg>
+          <div style="background-color: #E6EEEC; border: 2px solid #785B54; border-radius: 20px 17px 22px 15px / 15px 22px 17px 20px; box-shadow: 3px 4px 0 #9DB4B4; outline: 1.5px dashed #9DB4B4; outline-offset: -6px; padding: 10px 16px 11px">
+            <button style="border: 0; background: transparent; padding: 0; display: flex; align-items: center; gap: 2px; font-size: 12.5px; color: #7A5E57">思考过程<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7A5E57" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></button>
+            <p style="margin: 4px 0 0; font-size: 16px; line-height: 1.5">Hi</p>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 4px; margin-left: 50px; font-size: 12px; color: #7A5E57">
+        <span>11-05 19:43</span>
+        <button aria-label="复制" style="width: 28px; height: 28px; border: 0; background: transparent; padding: 0; display: flex; align-items: center; justify-content: center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7A5E57" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"></rect><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"></path></svg></button>
+        <button aria-label="更多" style="width: 28px; height: 28px; border: 0; background: transparent; padding: 0; display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="#7A5E57" aria-hidden="true"><circle cx="5" cy="12" r="1.7"></circle><circle cx="12" cy="12" r="1.7"></circle><circle cx="19" cy="12" r="1.7"></circle></svg></button>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 6px; align-items: flex-end">
+      <div style="display: flex; align-items: flex-start; gap: 10px; flex-direction: row-reverse">
+        <div style="flex: none; width: 40px; height: 40px; border-radius: 50%; border: 1.5px solid #785B54; overflow: hidden; box-sizing: border-box">
+          <img src="me.png" alt="用户头像" style="width: 100%; height: 100%; object-fit: cover; display: block">
+        </div>
+        <div style="position: relative; max-width: 250px">
+          <svg width="12" height="16" viewBox="0 0 12 16" style="position: absolute; right: -10px; top: 12px" aria-hidden="true"><path d="M0 1l11 7-11 7z" fill="#F3DCD5"></path><path d="M0 1l11 7-11 7" fill="none" stroke="#785B54" stroke-width="2" stroke-linejoin="round"></path></svg>
+          <div style="background-color: #F3DCD5; background-image: radial-gradient(#FBF5F1 1.6px, transparent 2.1px); background-size: 11px 11px; border: 2px solid #785B54; border-radius: 17px 21px 15px 22px / 22px 15px 20px 17px; box-shadow: -3px 4px 0 #E3B2A8; outline: 1.5px dashed #A88078; outline-offset: -6px; padding: 11px 16px 12px">
+            <p style="margin: 0; font-size: 16px; line-height: 1.5">reply with a short poem about rain</p>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 4px; margin-right: 50px; font-size: 12px; color: #7A5E57">
+        <span>11-05 19:44</span>
+        <button aria-label="复制" style="width: 28px; height: 28px; border: 0; background: transparent; padding: 0; display: flex; align-items: center; justify-content: center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7A5E57" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"></rect><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"></path></svg></button>
+        <button aria-label="更多" style="width: 28px; height: 28px; border: 0; background: transparent; padding: 0; display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="#7A5E57" aria-hidden="true"><circle cx="5" cy="12" r="1.7"></circle><circle cx="12" cy="12" r="1.7"></circle><circle cx="19" cy="12" r="1.7"></circle></svg></button>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 6px">
+      <div style="display: flex; align-items: flex-start; gap: 10px">
+        <div style="flex: none; width: 40px; height: 40px; border-radius: 50%; border: 1.5px solid #785B54; overflow: hidden; box-sizing: border-box">
+          <img src="ai.png" alt="AI头像" style="width: 100%; height: 100%; object-fit: cover; display: block">
+        </div>
+        <div style="position: relative; max-width: 290px">
+          <svg width="12" height="16" viewBox="0 0 12 16" style="position: absolute; left: -10px; top: 12px" aria-hidden="true"><path d="M12 1L1 8l11 7z" fill="#E6EEEC"></path><path d="M12 1L1 8l11 7" fill="none" stroke="#785B54" stroke-width="2" stroke-linejoin="round"></path></svg>
+          <div style="background-color: #E6EEEC; border: 2px solid #785B54; border-radius: 22px 18px 24px 16px / 16px 24px 18px 22px; box-shadow: 3px 4px 0 #9DB4B4; outline: 1.5px dashed #9DB4B4; outline-offset: -6px; padding: 11px 17px 13px">
+            <button style="border: 0; background: transparent; padding: 0; display: flex; align-items: center; gap: 2px; font-size: 12.5px; color: #7A5E57">思考过程<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7A5E57" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></button>
+            <p style="margin: 5px 0 0; font-size: 15px; line-height: 1.55">Rain taps the roof, a soft, uneven drum,<br>then settles in to stay.<br>The gutters hum, the sidewalks turn to glass,<br>and every window holds a little gray.</p>
+            <div style="display: flex; align-items: center; justify-content: center; gap: 6px; margin: 7px 0" aria-hidden="true">
+              <svg width="60" height="6" viewBox="0 0 60 6"><path d="M0 3q5-4 10 0t10 0 10 0 10 0 10 0 10 0" fill="none" stroke="#9DB4B4" stroke-width="1.4"></path></svg>
+              <svg width="10" height="10" viewBox="0 0 10 10"><path d="M5 0l1.4 3.6L10 5 6.4 6.4 5 10 3.6 6.4 0 5l3.6-1.4z" fill="#E3B2A8"></path></svg>
+              <svg width="60" height="6" viewBox="0 0 60 6"><path d="M0 3q5-4 10 0t10 0 10 0 10 0 10 0 10 0" fill="none" stroke="#9DB4B4" stroke-width="1.4"></path></svg>
+            </div>
+            <p style="margin: 0; font-size: 15px; line-height: 1.55">Somewhere a kettle whistles, someone stays<br>a while longer than they planned.<br>Rain doesn't rush. It teaches<br>how to let a day fall through your hands.</p>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 4px; margin-left: 50px; font-size: 12px; color: #7A5E57">
+        <span>11-05 19:44</span>
+        <button aria-label="复制" style="width: 28px; height: 28px; border: 0; background: transparent; padding: 0; display: flex; align-items: center; justify-content: center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7A5E57" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"></rect><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"></path></svg></button>
+        <button aria-label="更多" style="width: 28px; height: 28px; border: 0; background: transparent; padding: 0; display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="#7A5E57" aria-hidden="true"><circle cx="5" cy="12" r="1.7"></circle><circle cx="12" cy="12" r="1.7"></circle><circle cx="19" cy="12" r="1.7"></circle></svg></button>
+      </div>
+    </div>
+
+  </main>
+
+  <div style="flex: none; padding: 0 12px 14px">
+    <div style="position: relative; background-color: #FBF5F1; background-image: linear-gradient(90deg, rgba(120,91,84,0.05) 50%, transparent 50%), linear-gradient(rgba(120,91,84,0.05) 50%, transparent 50%); background-size: 14px 14px; border: 2px solid #785B54; border-radius: 22px 26px 20px 24px / 24px 20px 26px 22px; box-shadow: 3px 4px 0 #E3B2A8; outline: 1.5px dashed #A88078; outline-offset: -6px; padding: 13px 12px 11px">
+      <label for="msg" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">消息</label>
+      <input id="msg" placeholder="给 Mikeko 发消息" style="width: 100%; box-sizing: border-box; border: 0; background: transparent; font-family: inherit; font-size: 16px; color: #4A3530; padding: 2px 6px 12px; outline: none; caret-color: #785B54">
+      <div style="display: flex; align-items: center; gap: 8px">
+        <button aria-label="添加" style="flex: none; width: 44px; height: 44px; border-radius: 50%; border: 2px solid #785B54; background: #F3DCD5; display: flex; align-items: center; justify-content: center; padding: 0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5A433D" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></button>
+        <button style="flex: 1; min-width: 0; height: 36px; border-radius: 18px; border: 1.8px dashed #785B54; background: #E6EEEC; display: flex; align-items: center; gap: 4px; padding: 0 12px; font-size: 13px; color: #5A433D">
+          <span style="flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: left">deepseek/deepse…</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#5A433D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 10l5 5 5-5"></path></svg>
+        </button>
+        <button aria-label="语音" style="flex: none; width: 44px; height: 44px; border-radius: 50%; border: 2px solid #785B54; background: #E6EEEC; display: flex; align-items: center; justify-content: center; padding: 0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5A433D" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"></rect><path d="M5 11a7 7 0 0 0 14 0M12 18v3"></path></svg></button>
+        <button aria-label="发送" style="flex: none; width: 44px; height: 44px; border-radius: 50%; border: 2px solid #5A433D; background: #785B54; box-shadow: 0 0 0 2.5px #FBF5F1, 0 0 0 4px #E3B2A8; display: flex; align-items: center; justify-content: center; padding: 0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FBF5F1" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"></path></svg></button>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

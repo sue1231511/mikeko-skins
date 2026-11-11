@@ -1,0 +1,105 @@
+@font-face{font-family:"Cormorant";src:url(fonts/CormorantItalic.ttf);font-style:italic}
+@font-face{font-family:"Pinyon";src:url(fonts/PinyonScript.ttf)}
+:root{
+  --ink:#3F3A4F; --muted:#6E6880; --faint:#9C96AE;
+  --lilac:#6F6A9A; --lilac-soft:#C9C1DC; --lilac-pale:#ECE7F4;
+  --rose:#B07C90; --rose-soft:#E6C6D2; --rose-pale:#F7E8EE;
+  --ivory:#FFFDFC; --paper:#F7F3F5;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:"Noto Serif CJK SC",serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+.screen{position:relative;width:390px;overflow:hidden;
+  background:
+    linear-gradient(180deg,rgba(228,222,242,.55) 0%,rgba(247,243,245,0) 38%,rgba(247,243,245,0) 62%,rgba(240,224,233,.55) 100%),
+    url(img/paper.png);}
+.wm{position:absolute;pointer-events:none}
+button{font-family:inherit;color:inherit}
+.script{font-family:"Pinyon",cursive}
+.ital{font-family:"Cormorant",serif;font-style:italic}
+
+/* lace valance top bar */
+.valance{position:absolute;left:0;right:0;top:0;height:58px;z-index:5;
+  background:linear-gradient(180deg,#FFFEFE,#FBF8FA);display:flex;align-items:center;padding:0 8px}
+.valance .lace{position:absolute;left:0;top:57px;width:390px;height:20px}
+.valance .ribbon{position:absolute;left:0;right:0;top:51px;height:8px;
+  background:linear-gradient(180deg,#F2DCE5 0%,#FBEFF4 35%,#E9CCD8 100%);
+  border-top:1px solid #DDBCCA;border-bottom:1px solid #D7B3C2}
+.iconbtn{width:44px;height:44px;border:none;background:transparent;padding:0;display:flex;align-items:center;justify-content:center;position:relative;z-index:2}
+
+/* pearl buttons */
+.pearl{flex:none;width:44px;height:44px;border-radius:50%;border:none;padding:0;display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(circle at 34% 28%,#FFFFFF 0%,#F8F5FA 22%,#E9E3F0 58%,#CFC6DD 100%);
+  box-shadow:0 2px 4px rgba(90,80,130,.22),inset 0 -2px 3px rgba(150,140,185,.35),inset 0 1px 1px #fff}
+
+/* woven label */
+.woven{position:relative;display:inline-flex;align-items:center;gap:6px;padding:5px 12px 6px;border-radius:3px;
+  background:repeating-linear-gradient(90deg,rgba(255,255,255,.28) 0 1px,transparent 1px 3px),repeating-linear-gradient(0deg,rgba(0,0,0,.025) 0 1px,transparent 1px 3px),var(--bg,#E9E3F3);
+  box-shadow:0 1px 2px rgba(90,80,130,.18)}
+.woven::after{content:"";position:absolute;inset:3px;border:1px dashed rgba(255,255,255,.95);border-radius:2px;pointer-events:none}
+.woven.rose{--bg:#F1DCE5}
+
+.meta{display:flex;align-items:center;gap:0}
+.meta span{font-size:12px;color:var(--muted);margin-right:4px;text-shadow:0 0 3px #F7F3F5,0 0 6px #F7F3F5}
+.meta button{width:30px;height:26px;border:none;background:transparent;padding:0;display:flex;align-items:center;justify-content:center}
+
+.shape{position:relative}
+.shape > svg.bg{position:absolute;z-index:0;pointer-events:none;overflow:visible}
+.shape > .inner{position:relative;z-index:1}
+
+/* floating top: no bar */
+.topfade{position:absolute;left:0;right:0;top:0;height:104px;z-index:4;pointer-events:none;
+  background:linear-gradient(180deg,rgba(246,242,246,.97) 0,rgba(246,242,246,.88) 52%,rgba(246,242,246,0) 100%)}
+.topbtn{position:absolute;left:14px;top:18px;z-index:6}
+.hang{position:absolute;left:50%;top:0;width:176px;height:80px;margin-left:-88px;z-index:6}
+.hang .cameo{position:absolute;left:0;top:24px;width:176px;height:54px;display:flex;align-items:center;justify-content:center}
+.hang .cameo > span{position:relative;z-index:1}
+.quilt{position:absolute;inset:9px;border-radius:18px;pointer-events:none;
+  background:repeating-linear-gradient(45deg,transparent 0 13px,rgba(190,178,215,.22) 13px 14px),repeating-linear-gradient(-45deg,transparent 0 13px,rgba(190,178,215,.22) 13px 14px)}
+
+/* vellum / milk glass */
+.vellum{position:relative;border-radius:18px;
+  background:linear-gradient(160deg,rgba(255,255,255,.70),rgba(251,248,252,.50) 55%,rgba(243,237,247,.58));
+  -webkit-backdrop-filter:blur(7px) saturate(1.05);backdrop-filter:blur(7px) saturate(1.05);
+  border:1px solid rgba(255,255,255,.92);
+  box-shadow:0 0 0 .7px rgba(150,138,184,.55),0 10px 26px rgba(94,84,136,.11),inset 0 1px 0 #fff}
+.vellum::before{content:"";position:absolute;inset:5px;border-radius:13px;border:.8px solid rgba(150,138,188,.42);pointer-events:none;z-index:1}
+.vellum::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:1;
+  background:linear-gradient(112deg,rgba(255,255,255,0) 28%,rgba(255,236,246,.45) 40%,rgba(230,236,255,.42) 48%,rgba(255,255,255,0) 60%)}
+.vellum.rose{background:linear-gradient(160deg,rgba(251,232,240,.80),rgba(244,216,228,.62) 60%,rgba(240,208,222,.70));
+  box-shadow:0 0 0 .7px rgba(196,140,164,.6),0 10px 24px rgba(154,92,118,.12),inset 0 1px 0 rgba(255,255,255,.95)}
+.vellum.rose::before{border-color:rgba(255,255,255,.85)}
+.vellum > *{position:relative;z-index:2}
+.vellum > .press{position:absolute;z-index:0;pointer-events:none;filter:blur(.35px)}
+.clip{overflow:hidden}
+
+.tape{position:absolute;height:15px;z-index:7;pointer-events:none;
+  background:repeating-linear-gradient(90deg,rgba(240,212,224,.88) 0 5px,rgba(250,236,242,.88) 5px 10px);
+  clip-path:polygon(2px 0,calc(100% - 3px) 0,100% 3px,calc(100% - 2px) 7px,100% 11px,calc(100% - 3px) 100%,3px 100%,0 12px,2px 8px,0 4px);
+  box-shadow:0 1px 2px rgba(150,100,125,.18)}
+.sprig{position:absolute;z-index:6;pointer-events:none;filter:drop-shadow(0 2px 2px rgba(90,70,110,.16))}
+
+/* engraving printed into the card surface, bleeding off the right edge */
+.vellum > .print{position:absolute;top:0;right:0;bottom:0;width:80%;z-index:0;pointer-events:none;
+  background-repeat:no-repeat;background-size:cover;background-position:var(--pos,right center);opacity:var(--op,.42);
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,rgba(0,0,0,.18) 34%,rgba(0,0,0,.75) 66%,#000 100%);
+  mask-image:linear-gradient(90deg,transparent 0,rgba(0,0,0,.18) 34%,rgba(0,0,0,.75) 66%,#000 100%)}
+.halo b,.halo small,.halo span{text-shadow:0 0 2px rgba(255,255,255,.95),0 0 8px rgba(255,255,255,.85)}
+
+/* flat vellum buttons (replace glossy pearls) */
+.pearl{background:rgba(255,254,253,.72);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+  box-shadow:0 0 0 1px rgba(150,138,184,.55),inset 0 0 0 3px rgba(255,255,255,.85),inset 0 0 0 3.7px rgba(150,138,184,.28),0 3px 10px rgba(94,84,136,.08)}
+/* message notes */
+.note{position:relative;padding:13px 18px 15px;border-radius:4px 20px 20px 20px;
+  background:rgba(255,254,253,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  border:1px solid rgba(160,148,192,.5);box-shadow:0 6px 18px rgba(94,84,136,.07)}
+
+.note.me{border-radius:20px 4px 20px 20px;background:rgba(246,231,238,.92);border-color:rgba(200,150,172,.55)}
+
+.note > *{position:relative;z-index:1}
+.vellum.oval::before{border-radius:50%;inset:4px}
+.note::before{content:"";position:absolute;inset:4px;border-radius:2px 16px 16px 16px;border:.8px solid rgba(160,148,192,.38);pointer-events:none}
+.note.me::before{border-radius:16px 2px 16px 16px;border-color:rgba(255,255,255,.95)}
+.note{background:rgba(255,254,253,.8)}
+.note{background:rgba(255,254,253,.64);-webkit-backdrop-filter:blur(2.5px);backdrop-filter:blur(2.5px)}
+.note.me{background:rgba(246,229,237,.74)}

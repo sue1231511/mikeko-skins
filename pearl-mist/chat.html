@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>珍珠雾 聊天页</title>
+<link rel="stylesheet" href="common.css">
+<style>
+.screen{height:844px}
+.msgs{-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 50px);mask-image:linear-gradient(180deg,transparent 0,#000 50px);position:absolute;top:70px;left:0;right:0;bottom:142px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;gap:22px;padding:0 14px 6px;z-index:2}
+.row{display:flex;gap:12px;align-items:flex-start}
+.row.me{justify-content:flex-end}
+.avatar{position:relative;flex:none;width:46px;height:46px}
+.avatar .pic{position:absolute;inset:5px;border-radius:50%;overflow:hidden;background:#F6F1F4}
+.avatar .pic img{width:100%;height:100%;object-fit:cover}
+.col{display:flex;flex-direction:column;gap:8px;min-width:0}
+.me .col{align-items:flex-end}
+.think{display:flex;align-items:center;gap:2px;font-size:13px;color:var(--muted);margin-bottom:4px}
+.txt{font-size:16px;line-height:1.72}
+.txt p{margin:0}
+.txt p+p{margin-top:8px}
+.bub{padding:13px 18px 14px}
+.composer{position:absolute;left:12px;right:12px;bottom:14px;z-index:4}
+.tools{display:flex;align-items:center;gap:10px}
+.wax{position:relative;flex:none;border:none;background:transparent;padding:0;display:flex;align-items:center;justify-content:center}
+.wax > svg.arrow{position:relative;z-index:1}
+</style>
+</head>
+<body>
+<div class="screen">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><radialGradient id="tpg" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#fff"/><stop offset=".5" stop-color="#F8EEF0"/><stop offset="1" stop-color="#E5CDD6"/></radialGradient></defs></svg>
+  <img class="wm" src="img/castle_wm.png" alt="" style="top:96px;left:15px;width:360px;opacity:.42">
+  <img class="wm" src="img/fawn_wm.png" alt="" style="bottom:150px;left:-40px;width:330px;opacity:.3">
+
+  <div class="topfade"></div>
+  <button class="pearl topbtn" aria-label="菜单"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5E588A" stroke-width="1.8" stroke-linecap="round"><path d="M5 7.6Q12 6.9 19 7.5"/><path d="M5 12.1Q12 12.6 19 12"/><path d="M5 16.6Q12 16.1 19 16.7"/></svg></button>
+  <div class="hang">
+    <svg class="hang-r" style="position:absolute;left:0;top:0" width="176" height="34" viewBox="0 0 176 34" aria-hidden="true">
+      <path d="M70 -2L86 12M106 -2L90 12" stroke="#9A88AC" stroke-width=".9" fill="none"/>
+      <path d="M73 -2L87 11.5M103 -2L89 11.5" stroke="#C9B9D4" stroke-width=".6" fill="none"/>
+    </svg>
+    <div class="vellum oval" style="position:absolute;left:4px;top:24px;z-index:1;width:168px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center">
+      <svg style="position:absolute;inset:0;z-index:1" width="168" height="50" viewBox="0 0 168 50" aria-hidden="true"><defs><radialGradient id="cpg" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#fff"/><stop offset=".5" stop-color="#F8EEF0"/><stop offset="1" stop-color="#E5CDD6"/></radialGradient></defs><ellipse cx="84" cy="25" rx="78" ry="20" fill="none" stroke="url(#cpg)" stroke-width="3.2" stroke-linecap="round" stroke-dasharray=".1 5.2"/><ellipse cx="84" cy="25" rx="78" ry="20" fill="none" stroke="#E2CDD6" stroke-width=".4"/></svg>
+      <span class="script" style="font-size:23px;color:#6F6898;margin-top:2px">be the light.</span>
+    </div>
+    <svg style="position:absolute;left:58px;top:6px;z-index:0" width="60" height="37.5" viewBox="0 0 80 50" aria-hidden="true">
+      <g fill="#FCF6F8" stroke="#9A88AC" stroke-width=".95" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M37 22C34 32 30 39 22 47L27.5 45.6L27 49.5C33 42 38 33 39.5 24Z"/>
+        <path d="M43 22C46 32 50 39 58 47L52.5 45.6L53 49.5C47 42 42 33 40.5 24Z"/>
+        <path d="M38 19C30 6 13 1.5 8.5 9C5 15.5 14 23.5 38 21Z"/>
+        <path d="M42 19C50 6 67 1.5 71.5 9C75 15.5 66 23.5 42 21Z"/>
+        <rect x="36" y="14.5" width="8" height="10.5" rx="3"/>
+      </g>
+      <g fill="none" stroke="#B9A9C7" stroke-width=".6" stroke-linecap="round">
+        <path d="M35 18C28 11 19 8 13.5 10M35 20C27 17 18 16 12 17.5M45 18C52 11 61 8 66.5 10M45 20C53 17 62 16 68 17.5"/>
+        <path d="M38.5 17v6M41.5 17v6M35 28c-2 5-5 10-9 15M45 28c2 5 5 10 9 15"/>
+      </g>
+    </svg>
+  </div>
+
+  <main class="msgs">
+    <div class="row">
+      <div class="avatar" data-shape="pearlring"><div class="pic"><img src="img/angel_cameo.jpg" alt="AI 头像" style="object-position:62% 28%;transform:scale(1.7);transform-origin:58% 30%"></div></div>
+      <div class="col" style="max-width:270px">
+        <div style="position:relative">
+          <div class="note"><div class="think">思考过程<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8A84A2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></div><div class="txt">Hi</div></div>
+        </div>
+        <div class="meta" style="padding-left:8px"><span>11-05 19:43</span><button aria-label="复制"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#9C96AE" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8.5" y="8.5" width="11" height="11" rx="2.6"/><path d="M5 15.2V6.6A1.6 1.6 0 0 1 6.6 5H15"/></svg></button><button aria-label="更多"><svg width="15" height="15" viewBox="0 0 24 24" fill="#9C96AE"><circle cx="5.5" cy="12" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="18.5" cy="12" r="1.7"/></svg></button></div>
+      </div>
+    </div>
+
+    <div class="row me">
+      <div class="col" style="max-width:262px">
+        <div style="position:relative">
+          <div class="note me"><div class="txt" style="color:#4B3B47">reply with a short poem about rain</div></div>
+        </div>
+        <div class="meta" style="padding-right:8px"><span>11-05 19:44</span><button aria-label="复制"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#9C96AE" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8.5" y="8.5" width="11" height="11" rx="2.6"/><path d="M5 15.2V6.6A1.6 1.6 0 0 1 6.6 5H15"/></svg></button><button aria-label="更多"><svg width="15" height="15" viewBox="0 0 24 24" fill="#9C96AE"><circle cx="5.5" cy="12" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="18.5" cy="12" r="1.7"/></svg></button></div>
+      </div>
+      <div class="avatar" data-shape="pearlring"><div class="pic"><img src="img/swan_stamp.jpg" alt="用户头像" style="object-position:60% 45%"></div></div>
+    </div>
+
+    <div class="row">
+      <div class="avatar" data-shape="pearlring"><div class="pic"><img src="img/angel_cameo.jpg" alt="AI 头像" style="object-position:62% 28%;transform:scale(1.7);transform-origin:58% 30%"></div></div>
+      <div class="col" style="max-width:290px">
+        <div style="position:relative">
+          <div class="note">
+            <div class="think">思考过程<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8A84A2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></div>
+            <div class="txt">
+              <p>Rain taps the roof, a soft, uneven drum, then settles in to stay. The gutters hum, the sidewalks turn to glass, and every window holds a little gray.</p>
+              <p>Somewhere a kettle whistles, someone stays a while longer than they planned. Rain doesn't rush. It teaches how to let a day fall through your hands.</p>
+            </div>
+          </div>
+        </div>
+        <div class="meta" style="padding-left:8px"><span>11-05 19:44</span><button aria-label="复制"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#9C96AE" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8.5" y="8.5" width="11" height="11" rx="2.6"/><path d="M5 15.2V6.6A1.6 1.6 0 0 1 6.6 5H15"/></svg></button><button aria-label="更多"><svg width="15" height="15" viewBox="0 0 24 24" fill="#9C96AE"><circle cx="5.5" cy="12" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="18.5" cy="12" r="1.7"/></svg></button></div>
+      </div>
+    </div>
+  </main>
+
+  <div class="composer">
+    <div class="vellum clip" style="border-radius:24px;padding:14px 14px 12px">
+      <div class="print" style="background-image:url(img/sc_rose.png);--pos:right 28%;--op:.34;width:70%"></div>
+      <label for="msg" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">消息</label>
+      <input id="msg" type="text" placeholder="给 Mikeko 发消息" style="display:block;width:100%;border:none;outline:none;background:transparent;font-family:inherit;font-size:16px;color:var(--ink);padding:4px 6px 12px">
+      <div class="tools">
+        <button class="pearl" aria-label="添加"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6A6496" stroke-width="1.9" stroke-linecap="round"><path d="M12 5.5v13M5.5 12h13"/></svg></button>
+        <button class="woven" style="border:none;height:34px;font-size:13px;color:#4A4462;max-width:160px">
+          <span style="position:relative;z-index:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:112px">deepseek/deepseek-v3</span>
+          <svg style="position:relative;z-index:1" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7A739A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div style="flex:1"></div>
+        <button class="pearl" aria-label="语音"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6A6496" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3.5" width="6" height="11" rx="3"/><path d="M6 11.5a6 6 0 0 0 12 0M12 17.5V21M9 21h6"/></svg></button>
+        <button class="wax" data-shape="wax" aria-label="发送" style="width:50px;height:50px"><svg class="arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFF6FA" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5.5M6.5 11l5.5-5.5 5.5 5.5"/></svg></button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="shapes.js"></script>
+</body>
+</html>

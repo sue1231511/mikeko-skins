@@ -1,0 +1,126 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8"><title>Mikeko 皮肤稿：喜茶极简</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#e4e1dc;font-family:"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif;padding:22px;display:flex;gap:28px;align-items:flex-start}
+.cap{font-size:13px;color:#5b4a44;margin:0 0 8px 4px}
+.ph{width:360px;height:780px;background:#fff;border-radius:28px;overflow:hidden;position:relative;display:flex;flex-direction:column;color:#111}
+.hand{font-family:"ZCOOL KuaiLe","Noto Sans CJK SC",sans-serif;font-weight:400}
+.sb{height:26px;flex:none;display:flex;justify-content:space-between;align-items:center;padding:0 22px;font-size:11.5px;font-weight:600}
+.top{height:46px;flex:none;display:flex;align-items:center;gap:14px;padding:0 18px;position:relative}
+.top b{font-size:22px;letter-spacing:1px;transform:rotate(-2deg);display:inline-block}
+.ico{width:22px;height:22px;fill:none;stroke:#111;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;flex:none;display:block}
+.sm{width:15px;height:15px;stroke-width:2}
+/* 手抖的粗黑线：把边框单独做一层，加抖动滤镜 */
+.ink{position:absolute;inset:0;border:2.6px solid #111;border-radius:inherit;filter:url(#wob);pointer-events:none}
+.body{flex:1;overflow:hidden;padding:18px 16px 4px;position:relative}
+.msg{display:flex;gap:10px;margin:2px 0 18px;align-items:flex-start}
+.msg.me{flex-direction:row-reverse}
+.av{width:34px;height:34px;border-radius:50%;flex:none;position:relative;background:#f3f3f1}
+.col{display:flex;flex-direction:column;max-width:72%}
+.me .col{align-items:flex-end}
+.bub{position:relative;font-size:14.5px;line-height:1.62;padding:9px 14px 10px;border-radius:18px}
+.ai .bub{background:#fff;border-top-left-radius:5px}
+.me .bub{background:#111;color:#fff;border-top-right-radius:5px;filter:url(#wob2)}
+.me .bub span{display:inline-block;filter:none}
+.tl{position:absolute;top:-1px;width:12px;height:13px;overflow:visible}
+.ai .tl{left:-9px}.me .tl{right:-9px}
+.ai .tl .f{fill:#fff}.ai .tl .s{fill:none;stroke:#111;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.me .tl .f{fill:#111}
+.think{font-size:11.5px;color:#888;display:flex;align-items:center;gap:1px;margin-bottom:2px}
+.meta{display:flex;align-items:center;gap:12px;font-size:10.5px;color:#9a9a9a;margin-top:7px;padding:0 4px}
+.meta .ico{stroke:#9a9a9a}
+.input{flex:none;margin:6px 14px 20px;padding:11px 11px 10px;border-radius:22px;position:relative;background:#fff}
+.ph-t{font-size:14px;color:#9a9a9a;padding:1px 4px 12px}
+.bar{display:flex;align-items:center;gap:8px}
+.cb{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative;flex:none}
+.cb.send{background:#111;filter:url(#wob2)}
+.cb.send .ico{stroke:#fff}
+.pill{height:32px;border-radius:16px;padding:0 12px;font-size:12px;display:flex;align-items:center;gap:4px;position:relative}
+.sp{flex:1}
+/* 简笔画小人 */
+.doodle{position:absolute;fill:none;stroke:#111;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;filter:url(#wob);pointer-events:none}
+/* 设置 */
+.sbody{padding:10px 16px}
+.lbl{font-size:16px;margin:16px 6px 8px;transform:rotate(-1.5deg);display:inline-block}
+.card{position:relative;border-radius:18px;background:#fff}
+.row{display:flex;align-items:center;gap:13px;height:56px;padding:0 16px;font-size:14.5px;position:relative}
+.row+.row::before{content:"";position:absolute;left:50px;right:16px;top:0;border-top:2px solid #111;opacity:.14}
+.row .v{margin-left:auto;font-size:12px;color:#9a9a9a;display:flex;align-items:center;gap:2px}
+.row .v .ico{stroke:#9a9a9a}
+.tg{width:44px;height:26px;border-radius:13px;position:relative;flex:none;margin-left:auto}
+.tg .knob{position:absolute;top:5px;left:5px;width:16px;height:16px;border-radius:50%;border:2.4px solid #111;filter:url(#wob)}
+.tg.on{background:#111;filter:url(#wob2)}
+.tg.on .knob{left:23px;background:#fff;border-color:#fff}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute">
+ <filter id="wob"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="3"/><feDisplacementMap in="SourceGraphic" scale="3.2"/></filter>
+ <filter id="wob2"><feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="8"/><feDisplacementMap in="SourceGraphic" scale="2.6"/></filter>
+ <defs>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7.5c5-.6 11-.4 16 0M4 12.2c6-.3 10 .2 16-.2M4 16.8c5 .4 11-.3 16 0"/></symbol>
+  <symbol id="i-back" viewBox="0 0 24 24"><path d="M19.5 12.3C14 12 9 12.4 5 12M11 6.2 4.8 12l6 5.8"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><path d="M8.3 8.2h11.4v11.6H8.1zM15.8 8V4.2H4.3v11.6h3.6"/></symbol>
+  <symbol id="i-redo" viewBox="0 0 24 24"><path d="M19.6 12.4a7.7 7.7 0 1 1-2.4-5.6M19.8 3.8v4.6h-4.6"/></symbol>
+  <symbol id="i-more" viewBox="0 0 24 24"><path d="M5 12.2h.1M12 11.8h.1M19 12.1h.1" stroke-width="3.4"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12.2 5c-.2 5 .1 9-.1 14M5 11.8c5 .3 9-.1 14 .1"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><path d="M9.2 6.5c.1-4 5.6-4.1 5.6.1v5c0 4-5.7 4-5.6-.1zM5.6 11.2c.4 8.2 12.4 8.4 12.8 0M12 17.6v3.2"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="M12.1 19.2C11.8 14 12.2 9 12 5M6.2 10.8 12 4.9l5.8 6"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M7 10.2 12.1 15l4.9-5"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path d="M9.2 6 15 12.2 9 18"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><path d="M12 4.2c2.4 0 4 1.7 4 4s-1.7 4-4.1 3.9C9.5 12 8 10.4 8 8.1s1.7-3.9 4-3.9zM4.6 20c.6-4.3 3.6-6.6 7.4-6.6s6.8 2.4 7.4 6.6"/></symbol>
+  <symbol id="i-chip" viewBox="0 0 24 24"><path d="M6.4 6.2c4-.2 7.7.2 11.4-.1.3 4 0 7.8.2 11.6-4 .3-7.8-.1-11.7.1-.2-3.8.2-7.7.1-11.6zM9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 19.8C7 16.6 4.6 13.4 4.8 9.8 5 6.4 9.5 5 12 8.2c2.6-3.3 7.1-1.7 7.2 1.7.1 3.6-2.6 6.8-7.2 9.9z"/></symbol>
+  <symbol id="i-brush" viewBox="0 0 24 24"><path d="M15.2 4.2 19.8 9l-9.6 9.6H5.4v-4.8zM13 6.3l4.7 4.8"/></symbol>
+  <symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.6 6.6a4 4 0 0 0 5 5l-9 9a2.1 2.1 0 0 1-3-3l9-9a4 4 0 0 0-2-2z"/></symbol>
+ </defs>
+</svg>
+
+<div><div class="cap">喜茶极简 · 聊天</div>
+<div class="ph">
+ <div class="sb"><span>01:40</span><span>100</span></div>
+ <div class="top"><svg class="ico"><use href="#i-menu"/></svg></div>
+ <div class="body">
+  <div class="msg ai"><div class="av"><i class="ink"></i></div><div class="col"><div class="bub"><i class="ink"></i><svg class="tl" viewBox="0 0 12 13" style="filter:url(#wob)"><path class="f" d="M13 1.4 1.2 1.4 13 12Z"/><path class="s" d="M10.4 1.3 1.2 1.4 10.6 10.8"/></svg>今天喝什么？</div><div class="meta"><span>11-07 01:31</span><svg class="ico sm"><use href="#i-copy"/></svg><svg class="ico sm"><use href="#i-redo"/></svg><svg class="ico sm"><use href="#i-more"/></svg></div></div></div>
+  <div class="msg me"><div class="av" style="background:#ece7df"><i class="ink"></i></div><div class="col"><div class="bub"><svg class="tl" viewBox="0 0 12 13"><path class="f" d="M-1 0 11 0 -1 12Z"/></svg>多肉葡萄，少冰</div><div class="meta"><span>11-07 01:32</span><svg class="ico sm"><use href="#i-copy"/></svg><svg class="ico sm"><use href="#i-more"/></svg></div></div></div>
+  <div class="msg ai"><div class="av"><i class="ink"></i></div><div class="col"><div class="bub"><i class="ink"></i><svg class="tl" viewBox="0 0 12 13" style="filter:url(#wob)"><path class="f" d="M13 1.4 1.2 1.4 13 12Z"/><path class="s" d="M10.4 1.3 1.2 1.4 10.6 10.8"/></svg><div class="think">思考过程<svg class="ico sm"><use href="#i-chev"/></svg></div>半夜一点半喝冰的？<br>那我先把吸管藏起来。</div><div class="meta"><span>11-07 01:33</span><svg class="ico sm"><use href="#i-copy"/></svg><svg class="ico sm"><use href="#i-redo"/></svg><svg class="ico sm"><use href="#i-more"/></svg></div></div></div>
+  <div class="msg me"><div class="av" style="background:#ece7df"><i class="ink"></i></div><div class="col"><div class="bub"><svg class="tl" viewBox="0 0 12 13"><path class="f" d="M-1 0 11 0 -1 12Z"/></svg>还给我！</div><div class="meta"><span>11-07 01:33</span><svg class="ico sm"><use href="#i-copy"/></svg><svg class="ico sm"><use href="#i-more"/></svg></div></div></div>
+  <!-- 小人坐在输入框上沿，抱着一根吸管 -->
+  <svg class="doodle" style="right:34px;bottom:-21px;width:58px;height:66px" viewBox="0 0 58 66"><circle cx="24" cy="12" r="8.5"/><path d="M21 10.5h.1M27 10.6h.1M21.5 15.4c1.6 1.2 3.4 1.2 5 0"/><path d="M24 20.6c.4 8 .1 14 .3 20.5"/><path d="M24.2 26c-5 3-8 6-10 10M24.4 26.4c5 2 9 1.5 13-1"/><path d="M24.3 41c-4 6-5 12-6.6 22M24.4 41c3 7 6.4 12 7.6 22"/><path d="M37.6 25.2 50 2.4" stroke-width="3.4"/></svg>
+ </div>
+ <div class="input"><i class="ink"></i>
+  <div class="ph-t">给 Mikeko 发消息</div>
+  <div class="bar"><div class="cb"><i class="ink" style="border-width:2.2px"></i><svg class="ico"><use href="#i-plus"/></svg></div><div class="pill"><i class="ink" style="border-width:2px;border-style:dashed"></i>deepseek/deepse…<svg class="ico sm"><use href="#i-down"/></svg></div><div class="sp"></div><div class="cb"><i class="ink" style="border-width:2.2px"></i><svg class="ico"><use href="#i-mic"/></svg></div><div class="cb send"><svg class="ico"><use href="#i-up"/></svg></div></div>
+ </div>
+</div></div>
+
+<div><div class="cap">喜茶极简 · 设置</div>
+<div class="ph">
+ <div class="sb"><span>01:40</span><span>100</span></div>
+ <div class="top"><svg class="ico"><use href="#i-back"/></svg><b class="hand">设置</b>
+  <!-- 小人趴在顶栏右边，探头往下看 -->
+  <svg class="doodle" style="right:20px;top:4px;width:70px;height:40px" viewBox="0 0 70 40"><path d="M4 34c18-.6 40 .4 62-.2"/><circle cx="34" cy="22" r="8"/><path d="M31 21h.1M37 21.1h.1"/><path d="M27 33c-2-4-6-6-10-5M41 33c2-4 6-6 10-5"/></svg>
+ </div>
+ <div class="body sbody">
+  <div class="lbl hand">账号</div>
+  <div class="card"><i class="ink"></i><div class="row"><svg class="ico"><use href="#i-user"/></svg><span>已登录</span><span class="v">example@example.com</span></div></div>
+  <div class="lbl hand">模型与对话</div>
+  <div class="card"><i class="ink"></i>
+   <div class="row"><svg class="ico"><use href="#i-chip"/></svg><span>模型配置</span><span class="v"><svg class="ico sm"><use href="#i-chev"/></svg></span></div>
+   <div class="row"><svg class="ico"><use href="#i-tool"/></svg><span>工具</span><span class="v"><svg class="ico sm"><use href="#i-chev"/></svg></span></div>
+  </div>
+  <div class="lbl hand">个性化</div>
+  <div class="card"><i class="ink"></i>
+   <div class="row"><svg class="ico"><use href="#i-heart"/></svg><span>记忆</span><span class="v">全局记忆<svg class="ico sm"><use href="#i-chev"/></svg></span></div>
+   <div class="row"><svg class="ico"><use href="#i-brush"/></svg><span>外观</span><span class="v"><svg class="ico sm"><use href="#i-chev"/></svg></span></div>
+  </div>
+  <div class="lbl hand">显示效果</div>
+  <div class="card"><i class="ink"></i>
+   <div class="row"><span>壁纸文字保护</span><span class="tg on"><i class="knob"></i></span></div>
+   <div class="row"><span>显示消息用量统计</span><span class="tg"><i class="ink"></i><i class="knob"></i></span></div>
+   <div class="row"><span>滚动跳转按钮</span><span class="tg"><i class="ink"></i><i class="knob"></i></span></div>
+  </div>
+  <!-- 小人躺在最后一张卡下面伸懒腰 -->
+  <svg class="doodle" style="position:static;display:block;margin:4px 0 0 34px;width:110px;height:44px" viewBox="0 0 110 44"><circle cx="16" cy="20" r="8"/><path d="M13 18.5h.1M19 18.6h.1M14 23c1.4.8 2.8.8 4 0"/><path d="M24 22c16 .4 34-.4 52 .2"/><path d="M40 22c-2-8-6-14-10-18M52 22c3-8 8-12 14-15"/><path d="M76 22.2c8 2 16 6 26 6M76 22c9-2 18-6 28-8"/></svg>
+ </div>
+</div></div>
+</body></html>

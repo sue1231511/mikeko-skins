@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>设置</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0}
+.ruffle{height:9px;background-image:radial-gradient(circle at 7px 0,#E3B2A8 7px,transparent 7.6px);background-size:14px 9px;background-repeat:repeat-x}
+.lace{height:13px;margin-top:-5px;background-image:radial-gradient(circle at 9px 2px,#9DB4B4 1.5px,transparent 2px),radial-gradient(circle at 9px 0,#FBF5F1 7px,#785B54 7.4px,#785B54 8.6px,transparent 9.1px);background-size:18px 13px;background-repeat:repeat-x}
+.hem{height:12px;background-image:radial-gradient(circle at 8px 12px,#E3B2A8 7px,#785B54 7.4px,#785B54 8.4px,transparent 8.9px);background-size:16px 12px;background-repeat:repeat-x}
+button{font-family:inherit;cursor:pointer}
+</style>
+</helmet>
+<div style="width: 390px; height: 1000px; box-sizing: border-box; display: flex; flex-direction: column; overflow: hidden; font-family: 'Noto Serif SC', serif; color: #4A3530; background-color: #FBF5F1; background-image: radial-gradient(#E3B2A8 1.6px, transparent 2.1px), radial-gradient(#9DB4B4 1.6px, transparent 2.1px), repeating-linear-gradient(90deg, rgba(157,180,180,0.14) 0 9px, transparent 9px 24px); background-size: 24px 24px, 24px 24px, auto; background-position: 0 0, 12px 12px, 0 0">
+
+  <header style="flex: none">
+    <div style="height: 50px; background: #785B54; display: flex; align-items: center; gap: 6px; padding: 0 6px; position: relative">
+      <button aria-label="返回" style="width: 44px; height: 44px; border: 0; background: transparent; display: flex; align-items: center; justify-content: center; padding: 0">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FBF5F1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg>
+      </button>
+      <h1 style="margin: 0; font-size: 19px; font-weight: 500; color: #FBF5F1; letter-spacing: 2px">设置</h1>
+      <div style="position: absolute; left: 0; right: 0; bottom: 4px; border-bottom: 1.5px dashed rgba(251,245,241,0.5)"></div>
+    </div>
+    <div class="ruffle"></div>
+    <div class="lace"></div>
+  </header>
+
+  <main style="flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 18px; padding: 12px 16px 0">
+
+    <section style="display: flex; flex-direction: column; gap: 9px">
+      <h2 style="margin: 0; display: flex; font-size: 15px; font-weight: 600">
+        <span style="background: #CFDADA; color: #4A3530; padding: 3px 22px 3px 12px; clip-path: polygon(0 0, 100% 0, calc(100% - 9px) 50%, 100% 100%, 0 100%); border-top: 1.5px dashed #785B54; border-bottom: 1.5px dashed #785B54">账号</span>
+      </h2>
+      <div style="background: #FBF5F1; border: 2px solid #785B54; border-radius: 20px 24px 18px 22px / 22px 18px 24px 20px; box-shadow: 3px 4px 0 #9DB4B4; outline: 1.5px dashed #E3B2A8; outline-offset: -6px; padding: 14px 14px 14px 16px; display: flex; align-items: center; gap: 12px">
+        <div style="flex: none; width: 36px; height: 36px; border-radius: 50%; background: #E6EEEC; border: 1.5px solid #785B54; display: flex; align-items: center; justify-content: center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#5A433D" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path></svg></div>
+        <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px">
+          <span style="font-size: 16px">已登录</span>
+          <span style="font-size: 12.5px; color: #7A5E57; overflow: hidden; text-overflow: ellipsis; white-space: nowrap">example@example.com</span>
+        </div>
+        <button style="flex: none; height: 44px; padding: 0 18px; border-radius: 22px 20px 23px 19px; border: 2px solid #785B54; background: #F3DCD5; background-image: radial-gradient(#FBF5F1 1.4px, transparent 1.9px); background-size: 9px 9px; color: #A1463A; font-size: 15px; font-weight: 500">退出登录</button>
+      </div>
+    </section>
+
+    <section style="display: flex; flex-direction: column; gap: 9px">
+      <h2 style="margin: 0; display: flex; font-size: 15px; font-weight: 600">
+        <span style="background: #CFDADA; color: #4A3530; padding: 3px 22px 3px 12px; clip-path: polygon(0 0, 100% 0, calc(100% - 9px) 50%, 100% 100%, 0 100%); border-top: 1.5px dashed #785B54; border-bottom: 1.5px dashed #785B54">模型与对话</span>
+      </h2>
+      <div style="background: #FBF5F1; border: 2px solid #785B54; border-radius: 22px 18px 24px 20px / 20px 24px 18px 22px; box-shadow: 3px 4px 0 #9DB4B4; outline: 1.5px dashed #E3B2A8; outline-offset: -6px; padding: 4px 0">
+        <button style="width: 100%; border: 0; background: transparent; display: flex; align-items: center; gap: 12px; padding: 11px 14px 11px 16px; text-align: left; color: #4A3530">
+          <span style="flex: none; width: 36px; height: 36px; border-radius: 50%; background: #E6EEEC; border: 1.5px solid #785B54; display: flex; align-items: center; justify-content: center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#5A433D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="7" width="10" height="10" rx="2"></rect><path d="M9 3v4M15 3v4M9 17v4M15 17v4M3 9h4M3 15h4M17 9h4M17 15h4"></path></svg></span>
+          <span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 16px">模型配置</span><span style="font-size: 12.5px; color: #7A5E57">默认模型、转述、语音、向量与生成模型</span></span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#785B54" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
+        </button>
+        <div style="margin: 0 16px 0 64px; border-top: 1.5px dashed #9DB4B4"></div>
+        <button style="width: 100%; border: 0; background: transparent; display: flex; align-items: center; gap: 12px; padding: 11px 14px 11px 16px; text-align: left; color: #4A3530">
+          <span style="flex: none; width: 36px; height: 36px; border-radius: 50%; background: #E6EEEC; border: 1.5px solid #785B54; display: flex; align-items: center; justify-content: center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#5A433D" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 8h10M18 8h2M4 16h2M10 16h10M16 5v6M8 13v6"></path></svg></span>
+          <span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 16px">对话参数</span><span style="font-size: 12.5px; color: #7A5E57">温度、上下文、思考深度与群聊</span></span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#785B54" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
+        </button>
+        <div style="margin: 0 16px 0 64px; border-top: 1.5px dashed #9DB4B4"></div>
+        <button style="width: 100%; border: 0; background: transparent; display: flex; align-items: center; gap: 12px; padding: 11px 14px 11px 16px; text-align: left; color: #4A3530">
+          <span style="flex: none; width: 36px; height: 36px; border-radius: 50%; background: #E6EEEC; border: 1.5px solid #785B54; display: flex; align-items: center; justify-content: center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#5A433D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L4 17l3 3 5.3-5.3a4 4 0 0 0 5.4-5.4l-2.4 2.4-2.6-.6-.6-2.6z"></path></svg></span>
+          <span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 16px">工具</span><span style="font-size: 12.5px; color: #7A5E57">工具开关、自动注入与网页搜索</span></span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#785B54" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
+        </button>
+      </div>
+    </section>
+
+    <section style="display: flex; flex-direction: column; gap: 9px">
+      <h2 style="margin: 0; display: flex; font-size: 15px; font-weight: 600">
+        <span style="background: #CFDADA; color: #4A3530; padding: 3px 22px 3px 12px; clip-path: polygon(0 0, 100% 0, calc(100% - 9px) 50%, 100% 100%, 0 100%); border-top: 1.5px dashed #785B54; border-bottom: 1.5px dashed #785B54">个性化与记忆</span>
+      </h2>
+      <div style="background: #FBF5F1; border: 2px solid #785B54; border-radius: 18px 22px 20px 24px / 24px 20px 22px 18px; box-shadow: 3px 4px 0 #9DB4B4; outline: 1.5px dashed #E3B2A8; outline-offset: -6px; padding: 4px 0">
+        <button style="width: 100%; border: 0; background: transparent; display: flex; align-items: center; gap: 12px; padding: 11px 14px 11px 16px; text-align: left; color: #4A3530">
+          <span style="flex: none; width: 36px; height: 36px; border-radius: 50%; background: #E6EEEC; border: 1.5px solid #785B54; display: flex; align-items: center; justify-content: center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#5A433D" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path></svg></span>
+          <span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 16px">个性化</span><span style="font-size: 12.5px; color: #7A5E57">全局提示词、用户画像、变量与开场消息</span></span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#785B54" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
+        </button>
+        <div style="margin: 0 16px 0 64px; border-top: 1.5px dashed #9DB4B4"></div>
+        <button style="width: 100%; border: 0; background: transparent; display: flex; align-items: center; gap: 12px; padding: 11px 14px 11px 16px; text-align: left; color: #4A3530">
+          <span style="flex: none; width: 36px; height: 36px; border-radius: 50%; background: #E6EEEC; border: 1.5px solid #785B54; display: flex; align-items: center; justify-content: center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#5A433D" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"></path></svg></span>
+          <span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 16px">记忆</span><span style="font-size: 12.5px; color: #7A5E57">全局记忆</span></span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#785B54" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
+        </button>
+        <div style="margin: 0 16px 0 64px; border-top: 1.5px dashed #9DB4B4"></div>
+        <button style="width: 100%; border: 0; background: transparent; display: flex; align-items: center; gap: 12px; padding: 11px 14px 11px 16px; text-align: left; color: #4A3530">
+          <span style="flex: none; width: 36px; height: 36px; border-radius: 50%; background: #E6EEEC; border: 1.5px solid #785B54; display: flex; align-items: center; justify-content: center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#5A433D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"></path></svg></span>
+          <span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 16px">AI 空间</span><span style="font-size: 12.5px; color: #7A5E57">跨窗口摘要、用户档案与相关记忆</span></span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#785B54" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
+        </button>
+      </div>
+    </section>
+
+    <section style="display: flex; flex-direction: column; gap: 9px">
+      <h2 style="margin: 0; display: flex; font-size: 15px; font-weight: 600">
+        <span style="background: #CFDADA; color: #4A3530; padding: 3px 22px 3px 12px; clip-path: polygon(0 0, 100% 0, calc(100% - 9px) 50%, 100% 100%, 0 100%); border-top: 1.5px dashed #785B54; border-bottom: 1.5px dashed #785B54">外观</span>
+      </h2>
+      <div style="background: #FBF5F1; border: 2px solid #785B54; border-radius: 24px 20px 22px 18px / 18px 22px 20px 24px; box-shadow: 3px 4px 0 #9DB4B4; outline: 1.5px dashed #E3B2A8; outline-offset: -6px; padding: 4px 0">
+        <button style="width: 100%; border: 0; background: transparent; display: flex; align-items: center; gap: 12px; padding: 11px 14px 11px 16px; text-align: left; color: #4A3530">
+          <span style="flex: none; width: 36px; height: 36px; border-radius: 50%; background: #E6EEEC; border: 1.5px solid #785B54; display: flex; align-items: center; justify-content: center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#5A433D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16zM14 7l3 3"></path></svg></span>
+          <span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 16px">外观</span><span style="font-size: 12.5px; color: #7A5E57">主题、字体、颜色与插图</span></span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#785B54" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
+        </button>
+        <div style="margin: 0 16px 0 64px; border-top: 1.5px dashed #9DB4B4"></div>
+        <button style="width: 100%; border: 0; background: transparent; display: flex; align-items: center; gap: 12px; padding: 11px 14px 11px 16px; text-align: left; color: #4A3530">
+          <span style="flex: none; width: 36px; height: 36px; border-radius: 50%; background: #E6EEEC; border: 1.5px solid #785B54; display: flex; align-items: center; justify-content: center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#5A433D" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="6.5" height="6.5" rx="1.5"></rect><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5"></rect><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5"></rect><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5"></rect></svg></span>
+          <span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 16px">悬浮显示</span><span style="font-size: 12.5px; color: #7A5E57">灵动岛、状态栏歌词</span></span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#785B54" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <div style="flex: none">
+    <div class="hem"></div>
+    <div style="height: 8px; background: #785B54"></div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1000}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

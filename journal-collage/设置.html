@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>手帐拼贴 · 设置</title>
+<style>
+:root{
+  --kraft:#D9BF95; --kraft2:#C9AC7C; --paper:#FBF6EA; --ruled:#CFE3EC; --ink:#1F2A3A; --ink2:#5B6473; --ink3:#9AA1AC;
+  --red:#C8352E; --mint:#BFE3D0; --sky:#BBD6EB; --lemon:#F4E39B; --pink:#F3C2C4;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}body{font-family:"Noto Serif CJK SC","Source Han Serif SC","Songti SC",serif;color:var(--ink)}
+.phone{width:100%;min-height:100vh;position:relative;overflow-x:hidden;
+ background:
+  linear-gradient(rgba(31,42,58,.07) 1px,transparent 1px) 0 0/22px 22px,
+  linear-gradient(90deg,rgba(31,42,58,.07) 1px,transparent 1px) 0 0/22px 22px,
+  radial-gradient(900px 400px at 10% 0%,#F7EEDC,transparent 60%),#EFE3C9;}
+.grain{position:fixed;inset:0;pointer-events:none;opacity:.5;background:
+ repeating-radial-gradient(circle at 30% 20%, rgba(0,0,0,.025) 0 1px, transparent 1px 3px),
+ repeating-radial-gradient(circle at 70% 80%, rgba(255,255,255,.08) 0 1px, transparent 1px 4px);}
+.status{height:44px;display:flex;align-items:center;justify-content:space-between;padding:0 26px;font-family:"Noto Sans CJK SC",sans-serif;font-size:14px;font-weight:700}
+.bar{position:sticky;top:0;z-index:10;background:#EFE3C9;height:60px;display:flex;align-items:center;gap:14px;padding:0 20px;font-size:22px;letter-spacing:.25em;font-weight:700;position:relative}
+.bar::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:repeating-linear-gradient(90deg,var(--ink) 0 10px,transparent 10px 16px);opacity:.75}
+.bar svg{width:26px;height:26px;stroke:var(--ink);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.scroll{position:relative;padding:22px 16px 150px}
+
+/* tape */
+.tape{position:absolute;height:22px;width:84px;opacity:.9;box-shadow:0 1px 2px rgba(0,0,0,.15);
+ background:repeating-linear-gradient(135deg,var(--c1) 0 6px,var(--c2) 6px 12px);
+ clip-path:polygon(2% 0,98% 0,100% 20%,97% 100%,3% 100%,0 70%)}
+.tape.a{--c1:var(--sky);--c2:#D8E8F3}.tape.b{--c1:var(--lemon);--c2:#FBF0C2}.tape.c{--c1:var(--pink);--c2:#F9DCDD}.tape.d{--c1:var(--mint);--c2:#DDF0E5}
+
+/* chat */
+.msg{display:flex;gap:12px;margin-bottom:26px;align-items:flex-start;position:relative}
+.msg.me{flex-direction:row-reverse}
+.pola{width:50px;height:58px;background:#fff;padding:4px 4px 10px;box-shadow:0 2px 5px rgba(0,0,0,.2);flex:none;transform:rotate(-6deg);position:relative}
+.me .pola{transform:rotate(5deg)}
+.pola svg{width:42px;height:38px;display:block}
+.pola .tape{width:38px;height:12px;left:6px;top:-6px;transform:rotate(-8deg)}
+.bubble{max-width:300px;position:relative;padding:14px 18px 16px;font-size:17px;line-height:1.5;filter:drop-shadow(0 3px 0 rgba(31,42,58,.18)) drop-shadow(0 8px 14px rgba(60,40,10,.15))}
+.ai .bubble{background:var(--paper);
+ background-image:linear-gradient(transparent 0 24px,var(--ruled) 24px 25.5px);background-size:100% 25.5px;background-position:0 12px;
+ clip-path:polygon(0 3%,3% 0,22% 1%,40% 0,61% 2%,80% 0,100% 2%,99% 30%,100% 55%,98% 80%,100% 100%,78% 99%,60% 100%,38% 98%,18% 100%,0 99%,1% 70%,0 40%);
+ transform:rotate(-.6deg)}
+.ai .bubble::before{content:"";position:absolute;left:30px;top:0;bottom:0;width:1.5px;background:#E89A9A;opacity:.7}
+.me .bubble{background:var(--kraft);color:var(--ink);transform:rotate(.8deg);
+ clip-path:polygon(2% 0,98% 1%,100% 10%,99% 60%,100% 100%,70% 98%,40% 100%,10% 99%,0 90%,1% 30%);}
+.me .bubble::after{content:"";position:absolute;inset:6px;border:1.5px dashed rgba(31,42,58,.45);pointer-events:none}
+.think{display:inline-flex;align-items:center;gap:6px;font-size:12px;letter-spacing:.1em;color:#fff;background:var(--red);padding:4px 10px 4px 8px;margin:-4px 0 10px -4px;font-family:"Noto Sans CJK SC",sans-serif;font-weight:700;transform:rotate(-2deg);box-shadow:2px 2px 0 var(--ink)}
+.think svg{width:13px;height:13px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.bubble p{position:relative}.bubble p+p{margin-top:12px}
+.meta{display:flex;align-items:center;gap:12px;font-size:12px;color:var(--ink2);margin-top:9px;font-family:"Noto Sans CJK SC",sans-serif;font-weight:600;letter-spacing:.05em}
+.me .meta{justify-content:flex-end}
+.meta svg{width:16px;height:16px;stroke:var(--ink2);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.stamp{position:absolute;width:64px;height:64px;border:2.5px solid var(--red);border-radius:50%;color:var(--red);display:grid;place-items:center;font-family:"Noto Sans CJK SC",sans-serif;font-weight:900;font-size:11px;letter-spacing:.15em;text-align:center;line-height:1.2;opacity:.75;transform:rotate(-14deg);mix-blend-mode:multiply;
+ -webkit-mask:radial-gradient(circle at 40% 40%,#000 55%,transparent 56%),radial-gradient(circle,#000 90%,transparent 100%);-webkit-mask-composite:source-over}
+.stamp::before{content:"";position:absolute;inset:4px;border:1px solid var(--red);border-radius:50%}
+.sticker{position:absolute;width:64px;height:64px;z-index:5}
+.sticker svg{width:100%;height:100%;filter:drop-shadow(0 2px 2px rgba(0,0,0,.2))}
+.datechip{display:inline-block;font-size:12px;letter-spacing:.2em;font-family:"Noto Sans CJK SC",sans-serif;font-weight:700;background:var(--lemon);padding:4px 14px;margin:0 0 18px 150px;transform:rotate(-2deg);box-shadow:2px 2px 0 var(--ink);border:1.5px solid var(--ink)}
+
+.composer{position:fixed;left:12px;right:12px;bottom:14px;z-index:20;background:var(--kraft);padding:16px 16px 14px;box-shadow:0 4px 0 var(--ink),0 12px 24px rgba(40,25,5,.3);
+ clip-path:polygon(1% 0,30% 1%,55% 0,99% 1%,100% 40%,99% 100%,70% 99%,40% 100%,2% 99%,0 60%)}
+.composer::before{content:"";position:absolute;inset:7px;border:1.5px dashed rgba(31,42,58,.5);pointer-events:none}
+.composer .tape{top:-10px;left:150px;transform:rotate(-3deg)}
+.composer .ph{font-size:17px;color:var(--ink2);padding:6px 4px 16px;display:flex;align-items:center;gap:3px}
+.caret{width:2px;height:22px;background:var(--red)}
+.row{display:flex;align-items:center;gap:10px;position:relative}
+.btn{width:46px;height:46px;border-radius:50%;border:2px solid var(--ink);display:grid;place-items:center;background:var(--paper);box-shadow:2px 2px 0 var(--ink)}
+.btn svg{width:21px;height:21px;stroke:var(--ink);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn.send{background:var(--red);border-color:var(--ink)}.btn.send svg{stroke:#fff}
+.model{flex:1;height:40px;border:2px solid var(--ink);background:var(--paper);padding:0 12px;display:flex;align-items:center;gap:8px;font-size:13px;font-family:"Noto Sans CJK SC",sans-serif;font-weight:600;min-width:0;box-shadow:2px 2px 0 var(--ink);transform:rotate(-1deg)}
+.model span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.model svg{width:14px;height:14px;flex:none;stroke:var(--ink);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--mint);border:1.5px solid var(--ink);flex:none}
+
+/* settings */
+.grp{margin-bottom:30px;position:relative}
+.tag{display:inline-flex;align-items:center;gap:10px;background:var(--lemon);border:2px solid var(--ink);padding:5px 14px 5px 10px;font-size:15px;letter-spacing:.2em;font-weight:700;margin:0 0 -6px 10px;position:relative;z-index:2;transform:rotate(-2deg);box-shadow:2px 2px 0 var(--ink);
+ clip-path:polygon(0 50%,12px 0,100% 0,100% 100%,12px 100%)}
+.tag i{width:7px;height:7px;border-radius:50%;background:var(--paper);border:1.5px solid var(--ink);margin-left:6px}
+.tag.b{background:var(--sky)}.tag.c{background:var(--pink)}.tag.d{background:var(--mint)}
+.card{background:var(--paper);border:2px solid var(--ink);box-shadow:4px 4px 0 var(--ink),0 10px 20px rgba(40,25,5,.18);position:relative;transform:rotate(.4deg)}
+.grp:nth-child(2n) .card{transform:rotate(-.5deg)}
+.card .tape{top:-10px;right:18px;transform:rotate(4deg)}
+.card .art{position:absolute;right:92px;top:-36px;width:72px;height:72px;z-index:3;transform:rotate(8deg)}.acct-card .art{right:auto;left:40%}
+.card .art svg{width:100%;height:100%;filter:drop-shadow(0 2px 2px rgba(0,0,0,.2))}
+.item{display:flex;align-items:center;gap:16px;padding:18px 16px;position:relative}
+.item+.item::before{content:"";position:absolute;left:16px;right:16px;top:0;height:2px;background:repeating-linear-gradient(90deg,var(--ink) 0 6px,transparent 6px 11px);opacity:.35}
+.ico{width:44px;height:44px;border:2px solid var(--ink);background:var(--sky);display:grid;place-items:center;flex:none;transform:rotate(-4deg);box-shadow:2px 2px 0 var(--ink)}
+.item:nth-child(2) .ico{background:var(--pink);transform:rotate(3deg)}.item:nth-child(3) .ico{background:var(--lemon);transform:rotate(-3deg)}
+.ico svg{width:24px;height:24px;stroke:var(--ink);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.t{flex:1;min-width:0}.t b{display:block;font-size:17px;font-weight:700;letter-spacing:.1em;position:relative;width:max-content;max-width:100%}
+.t b::after{content:"";position:absolute;left:-2px;right:-4px;bottom:1px;height:7px;background:var(--lemon);z-index:-1;transform:rotate(-1deg)}
+.t{isolation:isolate}
+.t small{display:block;font-size:13px;color:var(--ink2);margin-top:5px;font-family:"Noto Sans CJK SC",sans-serif}
+.chev svg{width:20px;height:20px;stroke:var(--ink);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.pill{border:2px solid var(--ink);padding:9px 16px;font-size:15px;letter-spacing:.1em;font-weight:700;background:var(--pink);box-shadow:2px 2px 0 var(--ink);transform:rotate(2deg);white-space:nowrap}
+.acct .t b::after{background:var(--mint)}
+</style></head><body><div class="phone"><div class="grain"></div>
+ 
+ <div class="bar"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>设置
+  <div class="stamp" style="right:18px;top:4px;width:52px;height:52px;font-size:9px">SET<br>UP</div>
+ </div>
+ <div class="scroll">
+
+  <div class="grp"><div class="tag"><i></i>账号</div>
+   <div class="card acct-card"><div class="tape c"></div>
+    <div class="art"><svg viewBox="0 0 76 76"><circle cx="38" cy="38" r="30" fill="#BFE3D0" stroke="#1F2A3A" stroke-width="2"/><g fill="none" stroke="#1F2A3A" stroke-width="2" stroke-linecap="round"><circle cx="38" cy="31" r="9"/><path d="M20 60c3-10 9-14 18-14s15 4 18 14"/><path d="M31 27c3-5 11-5 14 0"/></g></svg></div>
+    <div class="item acct"><div class="ico" style="background:var(--mint)"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-5 4-7 8-7s7 2 8 7"/></svg></div>
+     <div class="t"><b>已登录</b><small>example@example.com</small></div><div class="pill">退出登录</div></div>
+   </div>
+  </div>
+
+  <div class="grp"><div class="tag b"><i></i>模型与对话</div>
+   <div class="card"><div class="tape b"></div>
+    <div class="art"><svg viewBox="0 0 76 76"><rect x="18" y="18" width="40" height="40" rx="6" fill="#BBD6EB" stroke="#1F2A3A" stroke-width="2"/><rect x="30" y="30" width="16" height="16" rx="2" fill="#FBF6EA" stroke="#1F2A3A" stroke-width="2"/><g stroke="#1F2A3A" stroke-width="2" stroke-linecap="round"><path d="M28 18v-8M38 18v-8M48 18v-8M28 58v8M38 58v8M48 58v8M18 28h-8M18 38h-8M18 48h-8M58 28h8M58 38h8M58 48h8"/></g></svg></div>
+    <div class="item"><div class="ico"><svg viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M10 7V4M14 7V4M10 20v-3M14 20v-3M7 10H4M7 14H4M20 10h-3M20 14h-3"/></svg></div>
+     <div class="t"><b>模型配置</b><small>默认模型、转述、语音、向量与生成模型</small></div><div class="chev"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></div></div>
+    <div class="item"><div class="ico"><svg viewBox="0 0 24 24"><path d="M5 4v16M19 4v16M12 4v16"/><circle cx="5" cy="9" r="2.2" fill="#FBF6EA"/><circle cx="12" cy="15" r="2.2" fill="#FBF6EA"/><circle cx="19" cy="7" r="2.2" fill="#FBF6EA"/></svg></div>
+     <div class="t"><b>对话参数</b><small>温度、上下文、思考深度与群聊</small></div><div class="chev"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></div></div>
+    <div class="item"><div class="ico"><svg viewBox="0 0 24 24"><path d="M14 4a5 5 0 0 0-5 7L4 16l4 4 5-5a5 5 0 0 0 7-5l-3 3-3-1-1-3 3-3z"/></svg></div>
+     <div class="t"><b>工具</b><small>工具开关、自动注入与网页搜索</small></div><div class="chev"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></div></div>
+   </div>
+  </div>
+
+  <div class="grp"><div class="tag c"><i></i>个性化与记忆</div>
+   <div class="card"><div class="tape d"></div>
+    <div class="art"><svg viewBox="0 0 76 76"><path d="M38 10l8 16 18 3-13 12 3 18-16-9-16 9 3-18-13-12 18-3z" fill="#F4E39B" stroke="#1F2A3A" stroke-width="2" stroke-linejoin="round"/><path d="M32 36c0-5 12-5 12 0 0 4-6 4-6 8" fill="none" stroke="#1F2A3A" stroke-width="2.2" stroke-linecap="round"/><circle cx="38" cy="49" r="1.8" fill="#1F2A3A"/></svg></div>
+    <div class="item"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-5 4-7 8-7s7 2 8 7"/></svg></div>
+     <div class="t"><b>个性化</b><small>全局提示词、用户画像、变量与开场消息</small></div><div class="chev"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></div></div>
+    <div class="item"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg></div>
+     <div class="t"><b>记忆</b><small>全局记忆</small></div><div class="chev"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></div></div>
+    <div class="item"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0-3 11.2V17h6v-2.8A6 6 0 0 0 12 3z"/><path d="M10 21h4"/></svg></div>
+     <div class="t"><b>AI 空间</b><small>跨窗口摘要、用户档案与相关记忆</small></div><div class="chev"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></div></div>
+   </div>
+  </div>
+
+  <div class="grp"><div class="tag d"><i></i>外观</div>
+   <div class="card"><div class="tape a"></div>
+    <div class="art"><svg viewBox="0 0 76 76"><path d="M38 12c-15 0-26 11-26 24 0 12 9 20 18 20 5 0 7-3 7-6s-2-5-2-8 3-5 7-5h6c8 0 14-5 14-13 0-7-10-12-24-12z" fill="#F3C2C4" stroke="#1F2A3A" stroke-width="2" stroke-linejoin="round"/><circle cx="24" cy="36" r="4" fill="#BBD6EB" stroke="#1F2A3A" stroke-width="1.6"/><circle cx="32" cy="24" r="4" fill="#F4E39B" stroke="#1F2A3A" stroke-width="1.6"/><circle cx="46" cy="22" r="4" fill="#BFE3D0" stroke="#1F2A3A" stroke-width="1.6"/><circle cx="56" cy="32" r="4" fill="#C8352E" stroke="#1F2A3A" stroke-width="1.6"/></svg></div>
+    <div class="item"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 20l4-1 10-10-3-3L5 16z"/><path d="M13 8l3 3M17 3l4 4"/></svg></div>
+     <div class="t"><b>外观</b><small>主题、字体、颜色与插图</small></div><div class="chev"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></div></div>
+    <div class="item"><div class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg></div>
+     <div class="t"><b>悬浮显示</b><small>灵动岛、状态栏歌词</small></div><div class="chev"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></div></div>
+   </div>
+  </div>
+
+ </div>
+</div></body></html>
